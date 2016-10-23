@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">TwoFoxGanme</string>
+    <string name="app_name_text">TwoFoxGanme</string>
+    <string name="main_game_text">游戏</string>
+    <string name="main_gift_text">礼包</string>
+    <string name="main_activity_text">活动</string>
+    <string name="main_book_text">攻略</string>
+    <string name="main_person_text">个人</string>
 </resources>
