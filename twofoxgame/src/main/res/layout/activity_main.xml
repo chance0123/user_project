@@ -10,13 +10,13 @@
         android:id="@+id/main_frame_layout_fl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/main_radio_group_rg"
         />
     <RadioGroup
-        android:id="@+id/main_radio_group_rg"
+        android:id="@id/main_radio_group_rg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="#ffffff"
         android:orientation="horizontal">
         <RadioButton
             android:id="@+id/main_game_rbn"

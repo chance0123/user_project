@@ -2,6 +2,6 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_checked="false" android:drawable="@drawable/tab_game_normal"/>
     <item android:state_checked="true" android:drawable="@drawable/tab_game_select"/>
-    <item android:state_checked="false" android:drawable="@drawable/gray"/>
-    <item android:state_checked="true" android:drawable="@drawable/red"/>
+    <!--<item android:state_checked="false" android:drawable="@drawable/gray"/>-->
+    <!--<item android:state_checked="true" android:drawable="@drawable/red"/>-->
 </selector>
