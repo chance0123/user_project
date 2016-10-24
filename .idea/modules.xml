@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TwoFoxGanme.iml" filepath="$PROJECT_DIR$/TwoFoxGanme.iml" />
       <module fileurl="file://$PROJECT_DIR$/twofoxgame/app.iml" filepath="$PROJECT_DIR$/twofoxgame/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commonlibrary/commonlibrary.iml" filepath="$PROJECT_DIR$/commonlibrary/commonlibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/twofoxgame/twofoxgame.iml" filepath="$PROJECT_DIR$/twofoxgame/twofoxgame.iml" />
     </modules>
   </component>

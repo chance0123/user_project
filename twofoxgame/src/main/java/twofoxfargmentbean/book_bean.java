@@ -3,16 +3,16 @@ package twofoxfargmentbean;
 /**
  * Created by chengling on 2016/10/24.
  */
-public class book_bean {
-    private long game_id;
+public class Book_bean {
+    private String game_id;
     private String game_name;
     private String img;
 
-    public long getGame_id() {
+    public String getGame_id() {
         return game_id;
     }
 
-    public void setGame_id(long game_id) {
+    public void setGame_id(String game_id) {
         this.game_id = game_id;
     }
 
@@ -32,13 +32,13 @@ public class book_bean {
         this.img = img;
     }
 
-    public book_bean(long game_id, String game_name, String img) {
+    public Book_bean(String game_id, String game_name, String img) {
         this.game_id = game_id;
         this.game_name = game_name;
         this.img = img;
     }
 
-    public book_bean() {
+    public Book_bean() {
         super();
     }
 }

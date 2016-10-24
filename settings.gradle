@@ -1,1 +1,1 @@
-include ':twofoxgame'
+include ':twofoxgame', ':commonlibrary'

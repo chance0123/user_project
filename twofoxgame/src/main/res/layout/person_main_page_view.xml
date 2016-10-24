@@ -6,7 +6,7 @@
         android:id="@+id/person_view_pager"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:background="@color/red"
+        android:background="@color/pink"
         android:drawableLeft="@drawable/user_head_dark"
         android:paddingLeft="15dp"
         android:gravity="center_vertical"
@@ -24,7 +24,7 @@
         android:layout_alignBottom="@+id/person_view_pager"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
-    <TextView
+    <Button
         android:id="@+id/twofox_formulate"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -33,11 +33,12 @@
         android:textSize="15sp"
         android:textColor="@color/black"
         android:layout_marginTop="10dp"
+        android:background="@color/white"
         android:gravity="center_vertical"
         android:paddingLeft="15dp"
         android:layout_below="@id/person_view_pager"
         />
-    <TextView
+    <Button
         android:id="@+id/my_card_box"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -49,9 +50,10 @@
         android:layout_below="@+id/twofox_formulate"
         android:layout_marginTop="10dp"
         android:paddingLeft="15dp"
+        android:background="@color/white"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
-    <TextView
+    <Button
         android:id="@+id/my_message"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -60,10 +62,11 @@
         android:textSize="15sp"
         android:textColor="@color/black"
         android:paddingLeft="15dp"
+        android:background="@color/white"
         android:gravity="center_vertical"
         android:layout_below="@id/my_card_box"
         />
-    <TextView
+    <Button
         android:id="@+id/person_game_manage"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -71,13 +74,14 @@
         android:text="@string/person_game_manage"
         android:textSize="15sp"
         android:paddingLeft="15dp"
+        android:background="@color/white"
         android:textColor="@color/black"
         android:gravity="center_vertical"
         android:layout_marginTop="10dp"
         android:layout_below="@+id/my_message"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
-    <TextView
+    <Button
         android:id="@+id/person_system_set"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -86,10 +90,11 @@
         android:text="@string/person_system_set"
         android:textSize="15sp"
         android:paddingLeft="15dp"
+        android:background="@color/white"
         android:gravity="center_vertical"
         android:layout_below="@id/person_game_manage"
         />
-    <TextView
+    <Button
         android:id="@+id/person_service_qq"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -97,6 +102,7 @@
         android:text="@string/person_service_qq"
         android:textSize="15sp"
         android:paddingLeft="15dp"
+        android:background="@color/white"
         android:textColor="@color/black"
         android:gravity="center_vertical"
         android:layout_below="@id/person_system_set"
