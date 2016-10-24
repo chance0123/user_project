@@ -15,5 +15,7 @@
     <string name="activity_hear_text">我的积分：</string>
     <string name="activity_collection_text">收藏</string>
     <string name="activity_messge_text">消息</string>
+    <string name="activity_over_time">结束时间</string>
+
 
 </resources>

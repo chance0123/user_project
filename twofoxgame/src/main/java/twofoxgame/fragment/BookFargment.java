@@ -23,7 +23,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import twofoxfargmentbean.Book_bean;
+import twofoxfargmentbean.BookBean;
 
 /**
  * Created by chengling on 2016/10/24.
@@ -32,7 +32,7 @@ public class BookFargment extends Fragment {
     private static final String TAG = "android++";
     public  final String PATH = "http://big.pipaw.com/api/game/Strategy";
     private GridView mGridView;
-    private List<Book_bean> datas = new ArrayList<>();
+    private List<BookBean> datas = new ArrayList<>();
     private BookAdapter bookAdapter;
 
     @Nullable
@@ -60,9 +60,9 @@ public class BookFargment extends Fragment {
                 String id = jsonObject.getString("game_id");
                 String game_name = jsonObject.getString("game_name");
                 String img = jsonObject.getString("img");
-                Book_bean book_bean = new Book_bean(id,game_name,img);
+                BookBean book_bean = new BookBean(id,game_name,img);
                 datas.add(book_bean);
-                Log.i(TAG, "preseJson: "+"end");
+//                Log.i(TAG, "preseJson: "+"end");
             }
 
             bookAdapter.notifyDataSetChanged();
@@ -99,7 +99,7 @@ public class BookFargment extends Fragment {
             }else {
                 viewHolder = (ViewHolder) view.getTag();
             }
-            Book_bean bean = datas.get(position);
+            BookBean bean = datas.get(position);
             ImageAsyncLoader.load(datas.get(position).getImg(),viewHolder.imageView).execute();
             viewHolder.textView.setText(datas.get(position).getGame_name());
             return view;
