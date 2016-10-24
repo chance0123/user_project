@@ -12,5 +12,8 @@
     <string name="person_system_set">系统设置</string>
     <string name="person_service_qq">客服QQ：2851396572</string>
     <string name="person_hear_text">请登录账号></string>
+    <string name="activity_hear_text">我的积分：</string>
+    <string name="activity_collection_text">收藏</string>
+    <string name="activity_messge_text">消息</string>
 
 </resources>
