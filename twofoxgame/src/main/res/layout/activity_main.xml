@@ -25,8 +25,9 @@
             android:layout_height="wrap_content"
             android:button="@null"
             android:text="@string/main_game_text"
+            android:textColor="@color/main_text_color"
             android:gravity="center"
-            android:drawableTop="@drawable/tab_game_normal"/>
+            android:drawableTop="@drawable/main_game_image"/>
         <RadioButton
             android:id="@+id/main_gift_rbn"
             android:layout_width="0dp"
@@ -34,8 +35,9 @@
             android:layout_height="wrap_content"
             android:button="@null"
             android:text="@string/main_gift_text"
+            android:textColor="@color/main_text_color"
             android:gravity="center"
-            android:drawableTop="@drawable/tab_gift_normal"/>
+            android:drawableTop="@drawable/main_gift_image"/>
         <RadioButton
             android:id="@+id/main_activity_rbn"
             android:layout_width="0dp"
@@ -43,8 +45,9 @@
             android:layout_height="wrap_content"
             android:button="@null"
             android:text="@string/main_activity_text"
+            android:textColor="@color/main_text_color"
             android:gravity="center"
-            android:drawableTop="@drawable/tab_activity_normal"/>
+            android:drawableTop="@drawable/main_activity_image"/>
         <RadioButton
             android:id="@+id/main_book_rbn"
             android:layout_width="0dp"
@@ -52,8 +55,9 @@
             android:layout_height="wrap_content"
             android:button="@null"
             android:text="@string/main_book_text"
+            android:textColor="@color/main_text_color"
             android:gravity="center"
-            android:drawableTop="@drawable/tab_book_normal"/>
+            android:drawableTop="@drawable/main_book_image"/>
         <RadioButton
             android:id="@+id/main_person_rbn"
             android:layout_width="0dp"
@@ -61,7 +65,8 @@
             android:layout_height="wrap_content"
             android:button="@null"
             android:text="@string/main_person_text"
+            android:textColor="@color/main_text_color"
             android:gravity="center"
-            android:drawableTop="@drawable/tab_person_normal"/>
+            android:drawableTop="@drawable/main_person_image"/>
     </RadioGroup>
 </RelativeLayout>
