@@ -5,4 +5,12 @@
     <string name="main_activity_text">活动</string>
     <string name="main_book_text">攻略</string>
     <string name="main_person_text">个人</string>
+    <string name="person_twofox_formulate">二狐定制</string>
+    <string name="person_my_card_box">我的卡箱</string>
+    <string name="person_my_message">我的消息</string>
+    <string name="person_game_manage">游戏管理</string>
+    <string name="person_system_set">系统设置</string>
+    <string name="person_service_qq">客服QQ：2851396572</string>
+    <string name="person_hear_text">请登录账号></string>
+
 </resources>
