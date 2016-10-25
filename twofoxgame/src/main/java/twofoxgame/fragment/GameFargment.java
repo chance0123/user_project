@@ -37,8 +37,13 @@ public class GameFargment extends Fragment {
     private static final String TAG = "11111";
     private CustomListView mListview;
     private List<GameBean> datas = new ArrayList<>();
+    private List<GameBean> datas2 = new ArrayList<>();
+    private List<GameBean> datas4 = new ArrayList<>();
     private GameOneAdapter gameOneAdapter;
-    private ListView mHotListView;
+    private CustomListView mHotListView;
+    private GameOneAdapter gameOneAdapter2;
+    private CustomListView mWelfareListView;
+    private GameOneAdapter gameOneAdapter4;
 
 
     @Nullable
@@ -46,25 +51,84 @@ public class GameFargment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.game_main_page_view,container,false);
         mListview = (CustomListView) view.findViewById(R.id.game_today_list_view_lv);
-        mHotListView = (ListView) view.findViewById(R.id.game_hot_list_view_lv);
-        gameOneAdapter = new GameOneAdapter();
-        mHotListView.setAdapter(gameOneAdapter);
+        mHotListView = (CustomListView) view.findViewById(R.id.game_hot_list_view_lv);
+        mWelfareListView = (CustomListView) view.findViewById(R.id.game_welfare_list_view_lv);
+        gameOneAdapter = new GameOneAdapter(datas);
+        gameOneAdapter2 = new GameOneAdapter(datas2);
+        gameOneAdapter4 = new GameOneAdapter(datas4);
+        mHotListView.setAdapter(gameOneAdapter2);
         mListview.setAdapter(gameOneAdapter);
-        AsyncTaskTool.load(PATH2).execute(new AsyncTaskTool.IMyCallback() {
-            @Override
-            public void success(String result) {
-                perseJson(result);
-            }
-        });
+        mWelfareListView.setAdapter(gameOneAdapter4);
+
         AsyncTaskTool.load(PATH).execute(new AsyncTaskTool.IMyCallback() {
             @Override
             public void success(String result) {
                 perseJson(result);
             }
         });
+        AsyncTaskTool.load(PATH2).execute(new AsyncTaskTool.IMyCallback() {
+            @Override
+            public void success(String result) {
+                perseJson2(result);
+            }
+        });
+        AsyncTaskTool.load(PATH4).execute(new AsyncTaskTool.IMyCallback() {
+            @Override
+            public void success(String result) {
+                perseJson4(result);
+            }
+        });
         return view;
     }
-    private void perseJson(String reslut){
+    private void perseJson2(String reslut2){
+        try {
+            JSONArray jsonArray = new JSONArray(reslut2);
+            int len = jsonArray.length();
+            for (int i = 0; i < len; i++) {
+//                Log.i(TAG, "perseJson: "+"start++++++++");
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                String logo = jsonObject.getString("logo");
+                String game_name = jsonObject.getString("game_name");
+                String type_name = jsonObject.getString("type_name");
+                String game_visits = jsonObject.getString("game_visits");
+                String desc1 = jsonObject.getString("desc1");
+//                Log.i(TAG, "perseJson: ============"+logo);
+                JSONObject download_data = jsonObject.getJSONObject("download_data");
+                String size = download_data.getString("size");
+                GameBean gameBean = new GameBean(desc1,game_name,game_visits,logo,size,type_name);
+//                datas.add(gameBean);
+                datas2.add(gameBean);
+            }
+            gameOneAdapter2.notifyDataSetChanged();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+    private void perseJson(String reslut3){
+        try {
+            JSONArray jsonArray = new JSONArray(reslut3);
+            int len = jsonArray.length();
+            for (int i = 0; i < len; i++) {
+//                Log.i(TAG, "perseJson: "+"start++++++++");
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                String logo = jsonObject.getString("logo");
+                String game_name = jsonObject.getString("game_name");
+                String type_name = jsonObject.getString("type_name");
+                String game_visits = jsonObject.getString("game_visits");
+                String desc1 = jsonObject.getString("desc1");
+//                Log.i(TAG, "perseJson: ============"+logo);
+                JSONObject download_data = jsonObject.getJSONObject("download_data");
+                String size = download_data.getString("size");
+                GameBean gameBean = new GameBean(desc1,game_name,game_visits,logo,size,type_name);
+                datas.add(gameBean);
+//                datas2.add(gameBean);
+            }
+            gameOneAdapter.notifyDataSetChanged();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+    private void perseJson4(String reslut){
         try {
             JSONArray jsonArray = new JSONArray(reslut);
             int len = jsonArray.length();
@@ -80,18 +144,25 @@ public class GameFargment extends Fragment {
                 JSONObject download_data = jsonObject.getJSONObject("download_data");
                 String size = download_data.getString("size");
                 GameBean gameBean = new GameBean(desc1,game_name,game_visits,logo,size,type_name);
-                datas.add(gameBean);
+                datas4.add(gameBean);
+//                datas2.add(gameBean);
             }
-            gameOneAdapter.notifyDataSetChanged();
+            gameOneAdapter4.notifyDataSetChanged();
         } catch (JSONException e) {
             e.printStackTrace();
         }
     }
     class GameOneAdapter extends BaseAdapter{
 
+        private List<GameBean> gameList = new ArrayList<>();
+
+        public GameOneAdapter(List<GameBean> games) {
+            gameList = games;
+        }
+
         @Override
         public int getCount() {
-            return datas == null ? 0 : datas.size();
+            return gameList == null ? 0 : gameList.size();
         }
 
         @Override
@@ -114,13 +185,13 @@ public class GameFargment extends Fragment {
             }else {
                 viewHolder = (ViewHolder) view.getTag();
             }
-            GameBean bean = datas.get(position);
-            ImageAsyncLoader.load(datas.get(position).getLogo(),viewHolder.logo).execute();
-            viewHolder.desc1.setText(datas.get(position).getDesc1());
-            viewHolder.game_name.setText(datas.get(position).getGame_name());
-            viewHolder.game_visits.setText("人气"+datas.get(position).getGame_visits());
-            viewHolder.size.setText(datas.get(position).getSize()+"|");
-            viewHolder.type_name.setText(datas.get(position).getType_name()+"|");
+            GameBean bean = gameList.get(position);
+            ImageAsyncLoader.load(gameList.get(position).getLogo(),viewHolder.logo).execute();
+            viewHolder.desc1.setText(gameList.get(position).getDesc1());
+            viewHolder.game_name.setText(gameList.get(position).getGame_name());
+            viewHolder.game_visits.setText("人气"+gameList.get(position).getGame_visits());
+            viewHolder.size.setText(gameList.get(position).getSize()+"|");
+            viewHolder.type_name.setText(gameList.get(position).getType_name()+"|");
             return view;
         }
         class ViewHolder{

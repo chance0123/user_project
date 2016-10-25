@@ -37,6 +37,8 @@
         android:layout_height="wrap_content"
         android:text="@string/person_twofox_formulate"
         android:textSize="15sp"
+        android:singleLine="true"
+        android:ellipsize="end"
         android:textColor="@color/black"
         android:layout_below="@id/acitivity_item_image_iv"
         android:layout_centerHorizontal="true"/>
