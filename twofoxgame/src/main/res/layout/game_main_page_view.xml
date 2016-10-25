@@ -44,6 +44,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="今日首发"
+        android:textSize="15sp"
+        android:textColor="@color/black"
         android:layout_below="@id/game_main_page_two_btn"/>
     <com.android.a1000phone.chengling.twofoxganme.CustomListView
         android:id="@+id/game_today_list_view_lv"
@@ -55,6 +57,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="热门推荐"
+
         android:layout_below="@id/game_today_list_view_lv"/>
     <com.android.a1000phone.chengling.twofoxganme.CustomListView
         android:id="@+id/game_hot_list_view_lv"
@@ -83,6 +86,7 @@
         android:id="@+id/game_welfare_list_view_lv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         android:layout_below="@id/game_welfare_txt"/>
 
     </LinearLayout>
