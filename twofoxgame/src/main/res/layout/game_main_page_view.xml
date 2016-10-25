@@ -1,40 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
     <LinearLayout
-        android:id="@+id/linearlayout_ll"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/game_view"
+        android:layout_width="5dp"
+        android:layout_height="50dp"
+        android:layout_gravity=""
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
     <Button
         android:id="@+id/game_main_page_one_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="      分类游戏
-      游戏大全"
-        android:drawableLeft="@drawable/game_online_2"/>
+        android:text="分类游戏\n游戏大全"
+        android:drawableLeft="@drawable/game_online_2"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/game_view"
+        android:layout_toEndOf="@+id/game_view"/>
     <Button
         android:id="@+id/game_main_page_two_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/game_hot_new"
-        android:text="      游戏排行榜
-        最新最热手游"
+        android:text="游戏排行榜\n最新最热手游"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@id/game_main_page_one_btn"
-        android:layout_toEndOf="@id/game_main_page_one_btn"/>
-    </LinearLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/linearlayout_ll">
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/game_view"
+        android:layout_alignEnd="@+id/game_view"/>
+        </RelativeLayout>
     <TextView
         android:id="@+id/game_today_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="今日首发"/>
-    <ListView
+        android:text="今日首发"
+        android:layout_below="@id/game_main_page_two_btn"/>
+    <com.android.a1000phone.chengling.twofoxganme.CustomListView
         android:id="@+id/game_today_list_view_lv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,7 +56,7 @@
         android:layout_height="wrap_content"
         android:text="热门推荐"
         android:layout_below="@id/game_today_list_view_lv"/>
-    <ListView
+    <com.android.a1000phone.chengling.twofoxganme.CustomListView
         android:id="@+id/game_hot_list_view_lv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -56,7 +67,7 @@
         android:layout_height="wrap_content"
         android:text="精品游戏"
         android:layout_below="@id/game_hot_list_view_lv"/>
-    <GridView
+    <com.android.a1000phone.chengling.twofoxganme.CustomGridView
         android:id="@+id/game_main_boutique_game_gv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -68,14 +79,13 @@
         android:layout_height="wrap_content"
         android:text="游戏福利"
         android:layout_below="@id/game_main_boutique_game_gv"/>
-    <ListView
+    <com.android.a1000phone.chengling.twofoxganme.CustomListView
         android:id="@+id/game_welfare_list_view_lv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/game_welfare_txt"/>
 
-    </RelativeLayout>
+    </LinearLayout>
 
 
-
-</RelativeLayout>
+</ScrollView>

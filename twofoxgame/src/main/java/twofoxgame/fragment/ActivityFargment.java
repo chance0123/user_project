@@ -53,7 +53,7 @@ public class ActivityFargment extends Fragment{
     }
     private void perseJson(String reslut){
         try {
-            Log.i(TAG, "perseJson: ++  ");
+//            Log.i(TAG, "perseJson: ++  ");
             JSONObject jsonObject1 = new JSONObject(reslut);
             JSONArray jsonArray = jsonObject1.getJSONArray("data");
             int len = jsonArray.length();
@@ -65,7 +65,7 @@ public class ActivityFargment extends Fragment{
                 String supports = jsonObject.getString("supports");
                 String comments = jsonObject.getString("comments");
                 String sn = jsonObject.getString("sn");
-                Log.i(TAG, "perseJson: --");
+//                Log.i(TAG, "perseJson: --");
                 ActivityBean activityBean = new ActivityBean(end_time,logo,title,supports,comments,sn);
                 datas.add(activityBean);
             }

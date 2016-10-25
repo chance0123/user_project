@@ -51,7 +51,7 @@ public class BookFargment extends Fragment {
         return view;
     }
     private void preseJson(String result){
-        Log.i(TAG, "preseJson: "+"");
+//        Log.i(TAG, "preseJson: "+"");
         try {
             JSONArray jsonArray = new JSONArray(result);
             int len = jsonArray.length();
@@ -72,8 +72,9 @@ public class BookFargment extends Fragment {
 
     }
 
+
     class BookAdapter extends BaseAdapter{
-        public static final String PATHFIX = "http://big.pipaw.com";
+//        public static final String PATHFIX = "http://big.pipaw.com";
         @Override
         public int getCount() {
             return datas == null ? 0 : datas.size();
