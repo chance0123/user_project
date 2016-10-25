@@ -3,44 +3,43 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/acitivity_hear_textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/user_head_dark"
-        android:text="@string/activity_hear_text"
-        android:layout_alignParentTop="true"
-        android:gravity="bottom"
-        />
-    <Button
-        android:id="@+id/button"
-        android:layout_width="45dp"
-        android:layout_height="20dp"
-        android:gravity="center_horizontal"
-        android:text="@string/activity_collection_text"
-        android:drawableLeft="@drawable/huodong_collect"
-        android:layout_marginRight="20dp"
-        android:background="@drawable/activity_botton"
-        android:layout_marginEnd="20dp"
-        android:layout_above="@+id/activity_list_view"
-        android:layout_toLeftOf="@+id/button2"
-        android:layout_toStartOf="@+id/button2"/>
-    <Button
-        android:layout_width="45dp"
-        android:layout_height="20dp"
-        android:gravity="center_horizontal"
-        android:text="@string/activity_messge_text"
-        android:drawableLeft="@drawable/huodong_msg"
-        android:layout_alignBottom="@id/acitivity_hear_textView"
-        android:layout_alignParentRight="true"
-        android:background="@drawable/activity_botton"
-        android:layout_alignParentEnd="true"
-        android:id="@+id/button2"/>
+    <!--<TextView-->
+        <!--android:id="@+id/acitivity_hear_textView"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:drawableLeft="@drawable/user_head_dark"-->
+        <!--android:text="@string/activity_hear_text"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:gravity="bottom"-->
+        <!--/>-->
+    <!--<Button-->
+        <!--android:id="@+id/button"-->
+        <!--android:layout_width="45dp"-->
+        <!--android:layout_height="20dp"-->
+        <!--android:gravity="center_horizontal"-->
+        <!--android:text="@string/activity_collection_text"-->
+        <!--android:drawableLeft="@drawable/huodong_collect"-->
+        <!--android:layout_marginRight="20dp"-->
+        <!--android:background="@drawable/activity_botton"-->
+        <!--android:layout_marginEnd="20dp"-->
+        <!--android:layout_above="@+id/activity_list_view"-->
+        <!--android:layout_toLeftOf="@+id/button2"-->
+        <!--android:layout_toStartOf="@+id/button2"/>-->
+    <!--<Button-->
+        <!--android:layout_width="45dp"-->
+        <!--android:layout_height="20dp"-->
+        <!--android:gravity="center_horizontal"-->
+        <!--android:text="@string/activity_messge_text"-->
+        <!--android:drawableLeft="@drawable/huodong_msg"-->
+        <!--android:layout_alignBottom="@id/acitivity_hear_textView"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:background="@drawable/activity_botton"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:id="@+id/button2"/>-->
     <ListView
-        android:id="@id/activity_list_view"
+        android:id="@+id/activity_list_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:dividerHeight="10dp"
-        android:layout_below="@id/acitivity_hear_textView"/>
-
+        />
 </RelativeLayout>
