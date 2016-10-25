@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "com.android.a1000phone.chengling.twofoxganme"
         minSdkVersion 15
-        targetSdkVersion 24
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
     }
