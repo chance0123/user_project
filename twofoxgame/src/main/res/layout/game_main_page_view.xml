@@ -24,21 +24,26 @@
     <Button
         android:id="@+id/game_main_page_one_btn"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:text="分类游戏\n游戏大全"
         android:drawableLeft="@drawable/game_online_2"
-        android:layout_alignParentRight="true"
-        android:layout_toRightOf="@id/game_view"
-        android:layout_toEndOf="@id/game_view"/>
+        android:background="@color/white"
+        android:padding="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@id/game_view"
+/>
     <Button
         android:id="@+id/game_main_page_two_btn"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:drawableLeft="@drawable/game_hot_new"
         android:text="游戏排行榜\n最新最热手游"
-        android:layout_alignParentLeft="true"
-        android:layout_alignRight="@id/game_view"
-        android:layout_alignEnd="@id/game_view"/>
+        android:background="@color/white"
+        android:padding="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/game_view"
+        android:layout_alignParentRight="true"/>
         </RelativeLayout>
 
     <TextView
@@ -46,9 +51,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="今日首发"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:textColor="@color/black"
-        android:layout_below="@id/game_main_page_two_btn"/>
+        android:layout_below="@id/game_main_page_two_btn"
+        android:layout_marginTop="10dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray"/>
     <com.android.a1000phone.chengling.twofoxganme.CustomListView
         android:id="@+id/game_today_list_view_lv"
         android:layout_width="match_parent"
@@ -59,7 +69,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="热门推荐"
-        android:layout_below="@id/game_today_list_view_lv"/>
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_below="@id/game_today_list_view_lv"
+        android:layout_marginTop="10dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray"/>
     <com.android.a1000phone.chengling.twofoxganme.CustomListView
         android:id="@+id/game_hot_list_view_lv"
         android:layout_width="wrap_content"
@@ -70,7 +87,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="精品游戏"
-        android:layout_below="@id/game_hot_list_view_lv"/>
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_below="@id/game_hot_list_view_lv"
+        android:layout_marginTop="10dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray"/>
     <com.android.a1000phone.chengling.twofoxganme.CustomGridView
         android:id="@+id/game_main_boutique_game_gv"
         android:layout_width="wrap_content"
@@ -82,7 +106,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="游戏福利"
-        android:layout_below="@id/game_main_boutique_game_gv"/>
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_below="@id/game_main_boutique_game_gv"
+        android:layout_marginTop="10dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray"/>
     <com.android.a1000phone.chengling.twofoxganme.CustomListView
         android:id="@+id/game_welfare_list_view_lv"
         android:layout_width="match_parent"

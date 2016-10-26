@@ -1,39 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-    <RelativeLayout
+    <TextView
+        android:id="@+id/nnnnnn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="二狐活动"
+        android:textSize="15dp"
+        android:textColor="@color/white"
+        android:background="@color/pink"
+        android:gravity="center_vertical"
+        android:drawableRight="@drawable/search_all"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"/>
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_below="@id/nnnnnn">
 
-    <TextView
-        android:id="@+id/acitivity_hear_textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/user_head_dark"
-        android:text="@string/activity_hear_text"
-        android:gravity="bottom"
-        />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <Button
-        android:id="@+id/button"
-        android:layout_width="45dp"
-        android:layout_height="20dp"
-        android:gravity="center_horizontal"
-        android:text="@string/activity_collection_text"
-        android:drawableLeft="@drawable/huodong_collect"
-        android:background="@drawable/activity_botton"
-        android:layout_above="@+id/activity_list_view"
-        android:layout_toLeftOf="@+id/button2"
-        android:layout_toStartOf="@+id/button2"
-        android:layout_marginRight="21dp"
-        android:layout_marginEnd="21dp"
-        android:layout_gravity="right"/>
+        <TextView
+            android:id="@+id/acitivity_hear_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/user_head_dark"
+            android:text="@string/activity_hear_text"
+            android:gravity="bottom"
+            />
 
         <Button
-            android:layout_width="45dp"
-            android:layout_height="20dp"
+            android:id="@+id/button"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:gravity="center_horizontal"
+            android:text="@string/activity_collection_text"
+            android:drawableLeft="@drawable/huodong_collect"
+            android:background="@drawable/activity_botton"
+            android:layout_above="@+id/activity_list_view"
+            android:layout_toLeftOf="@+id/button2"
+
+            android:layout_marginRight="20dp"
+            android:layout_gravity="right"
+            android:padding="5dp"
+            />
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="30dp"
             android:gravity="center_horizontal"
             android:text="@string/activity_messge_text"
             android:drawableLeft="@drawable/huodong_msg"
@@ -41,8 +60,9 @@
             android:layout_alignParentRight="true"
             android:background="@drawable/activity_botton"
             android:layout_alignParentEnd="true"
-            android:id="@+id/button2"
-            android:layout_gravity="right"/>
+            android:id="@id/button2"
+            android:layout_gravity="right"
+            android:padding="5dp"/>
 
         <com.android.a1000phone.chengling.twofoxganme.CustomListView
         android:id="@+id/activity_list_view"
@@ -50,6 +70,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/acitivity_hear_textView"
         />
-    </RelativeLayout>
-        <!--android:dividerHeight="10dp"-->
-</ScrollView>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

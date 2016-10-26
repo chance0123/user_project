@@ -3,14 +3,18 @@ package com.android.a1000phone.chengling.twofoxganme;
 
 
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.widget.RadioGroup;
 
+
+import com.android.a1000phone.chengling.twofoxganme.checkpager.PersonCheckActivity;
 
 import twofoxgame.fragment.ActivityFargment;
 import twofoxgame.fragment.BookFargment;
@@ -50,13 +54,12 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
 
     private void checkFargment(Fragment fragment) {
         FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
-        if (mFragment != null){
+        if (mFragment != null) {
             fragmentTransaction.hide(mFragment);
         }
-        if (!fragment.isAdded()){
-            fragmentTransaction.add(R.id.main_frame_layout_fl,fragment);
-        }
-        else {
+        if (!fragment.isAdded()) {
+            fragmentTransaction.add(R.id.main_frame_layout_fl, fragment);
+        } else {
             fragmentTransaction.show(fragment);
         }
         fragmentTransaction.commit();
@@ -65,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
 
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
-        switch (checkedId){
+        switch (checkedId) {
             case R.id.main_game_rbn:
                 checkFargment(mGameFargment);
                 break;
@@ -80,6 +83,34 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
                 break;
             case R.id.main_person_rbn:
                 checkFargment(mPersonFargment);
+                break;
+        }
+    }
+    public void intent(){
+        Intent intent = new Intent();
+        intent.setClass(this, PersonCheckActivity.class);
+        startActivity(intent);
+    }
+    public void click(View view) {
+        int id = view.getId();
+        switch (id) {
+            case R.id.person_btn:
+                intent();
+                break;
+            case R.id.twofox_formulate:
+                intent();
+                break;
+            case R.id.my_card_box:
+                intent();
+                break;
+            case R.id.my_message:
+                intent();
+                break;
+            case R.id.person_game_manage:
+                intent();
+                break;
+            case R.id.person_system_set:
+                intent();
                 break;
         }
     }
