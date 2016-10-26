@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    tools:context="com.android.a1000phone.chengling.twofoxganme.checkpager.PersonCheckActivity">
+
+    <TextView
+        android:id="@+id/person_login_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="登录"
+        android:textSize="20dp"
+        android:background="@color/white"
+        android:drawableLeft="@drawable/red_back"
+        android:padding="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="注册"
+        android:textSize="20dp"
+        android:textColor="@color/pink"
+        android:background="@color/white"
+        android:padding="10dp"
+        android:gravity="right"
+        android:layout_toRightOf="@id/person_login_back"
+        android:id="@+id/textView3"/>
+
+    <RelativeLayout
+        android:id="@+id/person_relativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+
+    <EditText
+        android:id="@+id/person_login_user_edt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="请输入6位数以上的字母或者数字"
+        android:textSize="20dp"
+        android:textColor="@color/gray"
+        android:drawableLeft="@drawable/login_user"
+        android:background="@color/white"
+        android:layout_marginTop="50dp"
+        android:padding="10dp"/>
+
+    <EditText
+        android:id="@+id/person_editText_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="请输入密码"
+        android:textSize="20dp"
+        android:textColor="@color/gray"
+        android:drawableLeft="@drawable/login_psw"
+        android:background="@color/white"
+        android:layout_below="@+id/person_login_user_edt"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"/>
+        <TextView
+            android:id="@+id/person_forget_btn"
+            android:text="忘记密码了吗"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/person_editText_two"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dp"/>
+        <Button
+            android:id="@+id/person_login_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="立即登录"
+            android:textColor="@color/white"
+            android:background="@color/pink"
+            android:layout_below="@id/person_forget_btn"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:id="@+id/person_mate_txt"
+            android:text="使用合作伙伴账号登录"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/person_login_btn"
+            android:layout_marginTop="200dp"/>
+
+        <TextView
+            android:id="@+id/person_mate_qq_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="QQ"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:drawableLeft="@drawable/login_qq"
+            android:paddingTop="20dp"
+            android:layout_below="@id/person_mate_txt"
+            android:layout_toLeftOf="@id/person_mate_txt"/>
+        <TextView
+            android:id="@+id/person_mate_sina_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="新浪"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:drawableLeft="@drawable/login_sina"
+            android:layout_below="@id/person_mate_txt"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="20dp"/>
+        <TextView
+            android:id="@+id/person_mate_weca_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="微信"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:drawableLeft="@drawable/login_weixin"
+            android:paddingTop="20dp"
+            android:layout_alignTop="@id/person_mate_sina_txt"
+            android:layout_toRightOf="@id/person_mate_txt"/>
+
+    </RelativeLayout>
+</RelativeLayout>
