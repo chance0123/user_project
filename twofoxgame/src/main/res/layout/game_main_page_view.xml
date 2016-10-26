@@ -2,10 +2,15 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+        <android.support.v4.view.ViewPager
+            android:id="@+id/game_hander_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"/>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -22,23 +27,20 @@
         android:layout_height="wrap_content"
         android:text="分类游戏\n游戏大全"
         android:drawableLeft="@drawable/game_online_2"
-        android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_toRightOf="@+id/game_view"
-        android:layout_toEndOf="@+id/game_view"/>
+        android:layout_toRightOf="@id/game_view"
+        android:layout_toEndOf="@id/game_view"/>
     <Button
         android:id="@+id/game_main_page_two_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/game_hot_new"
         android:text="游戏排行榜\n最新最热手游"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/game_view"
-        android:layout_alignEnd="@+id/game_view"/>
+        android:layout_alignRight="@id/game_view"
+        android:layout_alignEnd="@id/game_view"/>
         </RelativeLayout>
+
     <TextView
         android:id="@+id/game_today_text"
         android:layout_width="match_parent"
@@ -57,7 +59,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="热门推荐"
-
         android:layout_below="@id/game_today_list_view_lv"/>
     <com.android.a1000phone.chengling.twofoxganme.CustomListView
         android:id="@+id/game_hot_list_view_lv"
@@ -86,9 +87,7 @@
         android:id="@+id/game_welfare_list_view_lv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         android:layout_below="@id/game_welfare_txt"/>
-
     </LinearLayout>
 
 

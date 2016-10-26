@@ -1,12 +1,17 @@
 package twofoxgame.fragment;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -36,19 +41,32 @@ public class GameFargment extends Fragment {
     public static final String PATH2 = "http://big.pipaw.com/big/IndexGetHot?app_version=343&type=1";
     public static final String PATH3 = "http://big.pipaw.com/big/IndexGetHot?app_version=343&type=2";
     public static final String PATH4 = "http://big.pipaw.com/api/game/indexlist?app_version=343&type=firstpay&p=1";
-//    private static final String TAG = "11111";
+    public static final String PATH5 = "http://big.pipaw.com/big/GameBannerNew?app_version=343";
+    private static final String TAG = "11111";
     private List<GameBean> datas = new ArrayList<>();
     private List<GameBean> datas2 = new ArrayList<>();
     private List<GameGridBean> datas3 = new ArrayList<>();
     private List<GameBean> datas4 = new ArrayList<>();
+    private List<String> datas5 = new ArrayList<>();
     private CustomListView mListview;
     private CustomListView mHotListView;
     private CustomGridView mGridView;
     private CustomListView mWelfareListView;
+    private ViewPager mViewPager;
     private GameOneAdapter gameOneAdapter;
     private GameGridAdapter gameGridAdapter;
     private GameOneAdapter gameOneAdapter2;
     private GameOneAdapter gameOneAdapter4;
+    private GameHanderAdapter gameHanderAdapter;
+
+    private Handler mHandle = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            int index = msg.what;
+            mViewPager.setCurrentItem(index % 4);
+        }
+    };
+
 
 
     @Nullable
@@ -59,14 +77,17 @@ public class GameFargment extends Fragment {
         mHotListView = (CustomListView) view.findViewById(R.id.game_hot_list_view_lv);
         mWelfareListView = (CustomListView) view.findViewById(R.id.game_welfare_list_view_lv);
         mGridView = (CustomGridView) view.findViewById(R.id.game_main_boutique_game_gv);
+        mViewPager = (ViewPager) view.findViewById(R.id.game_hander_view_pager); //这是viewpager
         gameOneAdapter = new GameOneAdapter(datas);
         gameGridAdapter = new GameGridAdapter();
         gameOneAdapter2 = new GameOneAdapter(datas2);
         gameOneAdapter4 = new GameOneAdapter(datas4);
+        gameHanderAdapter = new GameHanderAdapter();
         mHotListView.setAdapter(gameOneAdapter2);
         mListview.setAdapter(gameOneAdapter);
         mWelfareListView.setAdapter(gameOneAdapter4);
         mGridView.setAdapter(gameGridAdapter);
+        mViewPager.setAdapter(gameHanderAdapter);
         AsyncTaskTool.load(PATH).execute(new AsyncTaskTool.IMyCallback() {
             @Override
             public void success(String result) {
@@ -91,22 +112,36 @@ public class GameFargment extends Fragment {
                 perseJson4(result);
             }
         });
+        AsyncTaskTool.load(PATH5).execute(new AsyncTaskTool.IMyCallback() {
+            @Override
+            public void success(String result) {
+                perseJson5(result);
+            }
+        });//这是viewpager
         return view;
     }
-    private void perseJson3(String result3){
+
+
+    private void perseJson(String reslut3){
         try {
-            JSONArray jsonArray = new JSONArray(result3);
+            JSONArray jsonArray = new JSONArray(reslut3);
             int len = jsonArray.length();
             for (int i = 0; i < len; i++) {
+//                Log.i(TAG, "perseJson: "+"start++++++++");
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                 String logo = jsonObject.getString("logo");
                 String game_name = jsonObject.getString("game_name");
                 String type_name = jsonObject.getString("type_name");
                 String game_visits = jsonObject.getString("game_visits");
-                GameGridBean gameGridBean = new GameGridBean(game_name,game_visits,logo,type_name);
-                datas3.add(gameGridBean);
+                String desc1 = jsonObject.getString("desc1");
+//                Log.i(TAG, "perseJson: ============"+logo);
+                JSONObject download_data = jsonObject.getJSONObject("download_data");
+                String size = download_data.getString("size");
+                GameBean gameBean = new GameBean(desc1,game_name,game_visits,logo,size,type_name);
+                datas.add(gameBean);
+//                datas2.add(gameBean);
             }
-            gameGridAdapter.notifyDataSetChanged();
+            gameOneAdapter.notifyDataSetChanged();
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -135,26 +170,20 @@ public class GameFargment extends Fragment {
             e.printStackTrace();
         }
     }
-    private void perseJson(String reslut3){
+    private void perseJson3(String result3){
         try {
-            JSONArray jsonArray = new JSONArray(reslut3);
+            JSONArray jsonArray = new JSONArray(result3);
             int len = jsonArray.length();
             for (int i = 0; i < len; i++) {
-//                Log.i(TAG, "perseJson: "+"start++++++++");
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                 String logo = jsonObject.getString("logo");
                 String game_name = jsonObject.getString("game_name");
                 String type_name = jsonObject.getString("type_name");
                 String game_visits = jsonObject.getString("game_visits");
-                String desc1 = jsonObject.getString("desc1");
-//                Log.i(TAG, "perseJson: ============"+logo);
-                JSONObject download_data = jsonObject.getJSONObject("download_data");
-                String size = download_data.getString("size");
-                GameBean gameBean = new GameBean(desc1,game_name,game_visits,logo,size,type_name);
-                datas.add(gameBean);
-//                datas2.add(gameBean);
+                GameGridBean gameGridBean = new GameGridBean(game_name,game_visits,logo,type_name);
+                datas3.add(gameGridBean);
             }
-            gameOneAdapter.notifyDataSetChanged();
+            gameGridAdapter.notifyDataSetChanged();
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -183,6 +212,38 @@ public class GameFargment extends Fragment {
             e.printStackTrace();
         }
     }
+    private void  perseJson5(String result){
+        try {
+            JSONArray jsonArray = new JSONArray(result);
+            int len  = jsonArray.length();
+            for (int i = 0; i < len; i++) {
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                String img = jsonObject.getString("img");
+                datas5.add(img);
+            }
+            gameHanderAdapter.notifyDataSetChanged();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                int index = 0;
+                while (true){
+
+                    try {
+                        Thread.sleep(3000);
+                        mHandle.sendEmptyMessage(index);
+
+                        index++;
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }).start();
+
+    }//这是viewpager
     class GameOneAdapter extends BaseAdapter{
 
         private List<GameBean> gameList = new ArrayList<>();
@@ -294,6 +355,38 @@ public class GameFargment extends Fragment {
                 type_name = (TextView) view.findViewById(R.id.game_grid_view_item_two_txt);
                 game_visits = (TextView) view.findViewById(R.id.game_grid_view_item_three_txt);
             }
+        }
+    }
+    class GameHanderAdapter extends PagerAdapter{
+
+        @Override
+        public int getCount() {
+//            Log.i(TAG, "getCount: "+datas5.size());
+            return datas5 == null ? 0 : datas5.size();
+//            return datas5 == null ? 0 : Integer.MAX_VALUE;
+        }
+
+        @Override
+        public boolean isViewFromObject(View view, Object object) {
+            return view == object;
+        }
+
+        @Override
+        public Object instantiateItem(ViewGroup container, int position) {
+            ImageView imageView = new ImageView(getContext());
+            container.addView(imageView);
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+//            String s = datas5.get(position);
+//            String path = "http://big.pipaw.com"+s;
+
+                ImageAsyncLoader.load(datas5.get(position),imageView).execute();
+
+            return imageView;
+        }
+
+        @Override
+        public void destroyItem(ViewGroup container, int position, Object object) {
+            container.removeView((View) object);
         }
     }
 }

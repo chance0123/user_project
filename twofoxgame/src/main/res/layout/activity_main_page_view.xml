@@ -1,45 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <!--<TextView-->
-        <!--android:id="@+id/acitivity_hear_textView"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:drawableLeft="@drawable/user_head_dark"-->
-        <!--android:text="@string/activity_hear_text"-->
-        <!--android:layout_alignParentTop="true"-->
-        <!--android:gravity="bottom"-->
-        <!--/>-->
-    <!--<Button-->
-        <!--android:id="@+id/button"-->
-        <!--android:layout_width="45dp"-->
-        <!--android:layout_height="20dp"-->
-        <!--android:gravity="center_horizontal"-->
-        <!--android:text="@string/activity_collection_text"-->
-        <!--android:drawableLeft="@drawable/huodong_collect"-->
-        <!--android:layout_marginRight="20dp"-->
-        <!--android:background="@drawable/activity_botton"-->
-        <!--android:layout_marginEnd="20dp"-->
-        <!--android:layout_above="@+id/activity_list_view"-->
-        <!--android:layout_toLeftOf="@+id/button2"-->
-        <!--android:layout_toStartOf="@+id/button2"/>-->
-    <!--<Button-->
-        <!--android:layout_width="45dp"-->
-        <!--android:layout_height="20dp"-->
-        <!--android:gravity="center_horizontal"-->
-        <!--android:text="@string/activity_messge_text"-->
-        <!--android:drawableLeft="@drawable/huodong_msg"-->
-        <!--android:layout_alignBottom="@id/acitivity_hear_textView"-->
-        <!--android:layout_alignParentRight="true"-->
-        <!--android:background="@drawable/activity_botton"-->
-        <!--android:layout_alignParentEnd="true"-->
-        <!--android:id="@+id/button2"/>-->
-    <ListView
+    <TextView
+        android:id="@+id/acitivity_hear_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/user_head_dark"
+        android:text="@string/activity_hear_text"
+        android:gravity="bottom"
+        />
+
+        <Button
+        android:id="@+id/button"
+        android:layout_width="45dp"
+        android:layout_height="20dp"
+        android:gravity="center_horizontal"
+        android:text="@string/activity_collection_text"
+        android:drawableLeft="@drawable/huodong_collect"
+        android:background="@drawable/activity_botton"
+        android:layout_above="@+id/activity_list_view"
+        android:layout_toLeftOf="@+id/button2"
+        android:layout_toStartOf="@+id/button2"
+        android:layout_marginRight="21dp"
+        android:layout_marginEnd="21dp"
+        android:layout_gravity="right"/>
+
+        <Button
+            android:layout_width="45dp"
+            android:layout_height="20dp"
+            android:gravity="center_horizontal"
+            android:text="@string/activity_messge_text"
+            android:drawableLeft="@drawable/huodong_msg"
+            android:layout_alignBottom="@id/acitivity_hear_textView"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/activity_botton"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/button2"
+            android:layout_gravity="right"/>
+
+        <com.android.a1000phone.chengling.twofoxganme.CustomListView
         android:id="@+id/activity_list_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/acitivity_hear_textView"
         />
+    </RelativeLayout>
         <!--android:dividerHeight="10dp"-->
-</RelativeLayout>
+</ScrollView>

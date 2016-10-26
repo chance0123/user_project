@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.android.a1000phone.chengling.twofoxganme.CustomListView;
 import com.android.a1000phone.chengling.twofoxganme.R;
 import com.androidxx.yangjw.commonlibrary.AsyncTaskTool;
 import com.androidxx.yangjw.commonlibrary.ImageAsyncLoader;
@@ -32,7 +33,7 @@ import twofoxfargmentbean.ActivityBean;
 public class ActivityFargment extends Fragment{
     public static final String PATH = "http://big.pipaw.com/api/activities/userindex?token=cnNCa5mMjTvXD%252Bw1YEZagvo%252BpKuh5M2aAl%252FOs29Raz95MnMqCjom4qSWYC%252BSFrelkEVyzVO9u9Jm1RWc7P3YWvJwn2H7qR4I&app_version=343&page_index=1&page_size=10";
     private static final String TAG = "android";
-    private ListView mListView;
+    private CustomListView mListView;
     private List<ActivityBean> datas = new ArrayList<>();
     private ActivityAdapter activityAdapter;
 
@@ -40,7 +41,7 @@ public class ActivityFargment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_main_page_view,container,false);
-        mListView = (ListView)view.findViewById(R.id.activity_list_view);
+        mListView = (CustomListView) view.findViewById(R.id.activity_list_view);
         activityAdapter = new ActivityAdapter();
         mListView.setAdapter(activityAdapter);
         AsyncTaskTool.load(PATH).execute(new AsyncTaskTool.IMyCallback() {
