@@ -1,7 +1,7 @@
 package http;
 
 /**
- * Created by 张样 on 2016/10/26.
+ * Created by cehngl on 2016/10/26.
  */
 public class HttpPost {
     public static final String imName ="im";
