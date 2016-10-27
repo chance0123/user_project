@@ -40,7 +40,7 @@
         android:id="@+id/person_login_user_edt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="请输入6位数以上的字母或者数字"
+        android:hint="请输入6位数以上的字母或者数字"
         android:textSize="20dp"
         android:textColor="@color/gray"
         android:drawableLeft="@drawable/login_user"
@@ -52,9 +52,10 @@
         android:id="@+id/person_editText_two"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="请输入密码"
+        android:hint="请输入密码"
         android:textSize="20dp"
         android:textColor="@color/gray"
+
         android:drawableLeft="@drawable/login_psw"
         android:background="@color/white"
         android:layout_below="@+id/person_login_user_edt"
@@ -85,7 +86,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_below="@id/person_login_btn"
-            android:layout_marginTop="200dp"/>
+            android:layout_marginTop="180dp"/>
 
         <TextView
             android:id="@+id/person_mate_qq_txt"
