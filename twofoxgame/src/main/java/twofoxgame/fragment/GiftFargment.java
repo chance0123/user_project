@@ -130,7 +130,6 @@ public class GiftFargment extends Fragment {
 
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
-
             }
 
             @Override
